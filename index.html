@@ -323,17 +323,17 @@
         max-width:1200px;
         padding:32px 28px 40px;
         display:grid;
-        grid-template-columns:320px 1fr 220px;
+        grid-template-columns:220px 1fr 320px;
         grid-template-rows:auto;
         column-gap:28px;
         grid-template-areas:
-          "header  header  settings"
-          "langs   langs   settings"
-          "daycard chart   settings"
-          "daycard events  settings"
-          "cal     events  settings"
-          "cal     events  settings"
-          "footer  footer  settings";
+          "settings header  cal"
+          "settings langs   cal"
+          "settings daycard cal"
+          "settings chart   cal"
+          "settings events  cal"
+          "settings events  cal"
+          "settings footer  cal";
         align-items:start;
       }
 
@@ -353,6 +353,8 @@
       /* We'll stack legend, tabs, grid inside a single cell via JS class */
       .desktop-cal-col{
         grid-area:cal;
+        position:sticky;
+        top:20px;
         display:flex;flex-direction:column;gap:0;
       }
       .desktop-cal-col .legend-row{ margin-bottom:12px; }
